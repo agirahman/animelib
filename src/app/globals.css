@@ -2,32 +2,99 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
+
+img {
+    transition: .3s ease all;
+    -webkit-transition: .3s ease all;
+    -moz-transition: .3s ease all;
+    -ms-transition: .3s ease all;
+    -o-transition: .3s ease all;
+}
+
+/* LOADER CSS */
+.custom-loader {
+    width:50px;
+    height:12px;
+    background: 
+      radial-gradient(circle closest-side,#32CD32 90%,#0000) 0%   50%,
+      radial-gradient(circle closest-side,#32CD32 90%,#0000) 50%  50%,
+      radial-gradient(circle closest-side,#32CD32 90%,#0000) 100% 50%;
+    background-size:calc(100%/3) 100%;
+    background-repeat: no-repeat;
+    animation:d7 1s infinite linear;
+  }
+  @keyframes d7 {
+      33%{background-size:calc(100%/3) 0%  ,calc(100%/3) 100%,calc(100%/3) 100%}
+      50%{background-size:calc(100%/3) 100%,calc(100%/3) 0%  ,calc(100%/3) 100%}
+      66%{background-size:calc(100%/3) 100%,calc(100%/3) 100%,calc(100%/3) 0%  }
+  }
+
+
+ .swal2-responsive-popup {
+   max-width: 90%; /* Membuat pop-up lebih kecil pada perangkat mobile */
+   margin: 0 auto; /* Menyentriskan pop-up */
+   border-radius: 10px; /* Memberikan sedikit radius pada sudut */
+}
+
+.slick-prev, .slick-next {
+    background-color: rgba(0, 0, 0, 0.5); /* Warna latar belakang */
+    color: white; /* Warna teks (panah) */
+    border-radius: 50%; /* Membuat panah berbentuk lingkaran */
+    width: 40px; /* Lebar tombol panah */
+    height: 40px; /* Tinggi tombol panah */
+    z-index: 20; /* Menampilkan di atas elemen lain */
+}
+
+.slick-prev {
+    left: 10px; /* Jarak dari kiri */
+}
+
+.slick-next {
+    right: 8px; /* Jarak dari kanan */
+}
+
+.border-dash {
+    border: 2px dashed #efefef;
+    border-radius: 10px
+}
+
+.bg-blur {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+
+ /* @keyframes dots-zcf63l {
+    33% {
+       background-size: calc(100%/3) 0%  ,calc(100%/3) 100%,calc(100%/3) 100%;
+    }
+ 
+    50% {
+       background-size: calc(100%/3) 100%,calc(100%/3) 0%  ,calc(100%/3) 100%;
+    }
+ 
+    66% {
+       background-size: calc(100%/3) 100%,calc(100%/3) 100%,calc(100%/3) 0%;
+    }
+ } */
+
+
+@media (min-width: 768px) {
+   .swal2-responsive-popup {
+       max-width: 500px; /* Ukuran default pop-up pada layar lebih besar */
+   }
+}
+
+
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+        --radius: 0.5rem;
+    }
 }
