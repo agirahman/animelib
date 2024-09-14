@@ -35,7 +35,7 @@ const RecomendedAnime = ({ api }) => {
     autoplaySpeed: 3500,
     centerPadding: "20%",
     arrows: true,
-    // dots: true,
+    dots: true,
   };
 
   return (

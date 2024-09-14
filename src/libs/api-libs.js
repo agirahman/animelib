@@ -4,6 +4,24 @@ export const getAnimeResponse = async(resource, query) => {
     return anime
 }
 
+// export const getAnimeResponse = async(resource, query) => {
+//     const cacheKey = `${resource}-${query}`;
+//     const cachedData = sessionStorage.getItem(cacheKey);
+
+//     if (cachedData) {
+//         return JSON.parse(cachedData);
+//     }
+
+//     const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/${resource}?${query}`);
+//     const anime = await response.json();
+
+//     // Simpan hasil ke sessionStorage
+//     sessionStorage.setItem(cacheKey, JSON.stringify(anime));
+
+//     return anime;
+// };
+
+
 export const getRecommendedAnimeResponse = async (resource, objectProperty) => {
     try {
         const response = await getAnimeResponse(resource);

@@ -3,9 +3,7 @@ import Image from "next/image"
 
 const Page = async ({params: { id }}) => {
     const manga = await getAnimeResponse(`manga/${id}`)
-    console.log(manga)
-
-
+    // console.log(manga)
     return (
 <>
       <div className="flex flex-col justify-center pt-4 px-4">
@@ -15,7 +13,7 @@ const Page = async ({params: { id }}) => {
         </h3>
       </div>
 
-      <div className="py-4 px-4 flex justify-center items-center flex-col gap-4 text-primary">
+      <div className="py-4 px-2 flex justify-center items-center flex-col gap-4 text-primary">
         <div className="relative rounded-md overflow-hidden shadow-custom-crisp">
           <Image
             src={manga.data.images.webp.image_url}
@@ -31,7 +29,7 @@ const Page = async ({params: { id }}) => {
 
         
 
-        <div className="grid md:grid-cols-8 grid-cols-4 gap-2 py-4 px-4 text-sm text-dark text-center justify-center overflow-x-auto">
+        <div className="grid md:grid-cols-8 grid-cols-4 gap-2 py-4text-sm text-dark text-center justify-center overflow-x-auto">
           <div className="w-auto flex flex-row justify-center items-center rounded-md border border-accent2 bg-accent1 p-1">
             <p>Rank #{manga.data.rank}</p>
           </div>

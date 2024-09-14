@@ -8,7 +8,7 @@ const SideContent = ({ api }) => {
         return (
           <Link
             href={`/character/${char.mal_id}`}
-            className="group relative cursor-pointer text-dark rounded-md shadow-custom-crisp overflow-hidden"
+            className="group transition-all hover:scale-105 relative cursor-pointer text-dark rounded-md shadow-custom-crisp overflow-hidden"
             key={index}
           >
             <Image
@@ -16,12 +16,12 @@ const SideContent = ({ api }) => {
               alt={char.images.jpg.image_url}
               width={350}
               height={350}
-              className="transform  group-hover:scale-105 w-full h-full object-cover "
+              className="w-full h-full object-cover "
               priority
             />
 
             <h4
-              className="absolute bottom-0 left-0 right-0 text-center lg:text-lg text-sm text-white 
+              className="absolute transition-all group-hover:bottom-0 left-0 right-0 text-center lg:text-lg text-sm text-white 
   bg-gradient-to-t from-black to-transparent 
   flex items-center justify-center 
   width: fit-content 

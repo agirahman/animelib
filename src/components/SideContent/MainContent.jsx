@@ -17,6 +17,7 @@ const MainContent =  ({ children }) => {
     const fetchTopCharacters = async () => {
       const response = await getAnimeResponse('top/characters', "limit=10");
       setTopCharacters(response)
+      localStorage.setItem('topCharacters', JSON.stringify(response));
     }
     fetchTopCharacters()
   }, [])
@@ -25,6 +26,7 @@ const MainContent =  ({ children }) => {
     const fetchTopManga = async () => {
       const response = await getAnimeResponse('top/manga', "limit=10");
       setTopManga(response)
+      localStorage.setItem('topManga', JSON.stringify(response));
     }
     fetchTopManga()
   }, [])
@@ -39,7 +41,7 @@ const MainContent =  ({ children }) => {
           <h3 className="lg:text-2xl text-sm text-center font-bold justify-center items-center">Top Manga</h3>
           <TopManga api={topManga}/>
 
-          <h3 className="mt-10 lg:text-2xl text-sm text-center font-bold justify-center items-center">Top Characters</h3>
+          <h3 className="mt-10 lg:text-2xl text-sm text-center font-bold justify-center items-center">Top Character</h3>
           <TopCharacters api={topCharacters}/>
         </div>
       )}

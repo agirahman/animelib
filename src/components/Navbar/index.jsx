@@ -1,11 +1,10 @@
-import Link from "next/link";
 import InputSearch from "./InputSearch";
 import UserActionButton from "./UserActionButton";
 import MobileNav from "./MobileNav";
 
-const Navbar = ({ title }) => {
+const Navbar = () => {
   return (
-    <header className="bg-primary shadow-lg">
+    <header className="bg-primary sticky top-0 z-50 shadow-lg">
       <div className="navbar bg-">
         <div className="navbar-start">
          <MobileNav/>

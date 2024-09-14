@@ -1,4 +1,5 @@
 import AnimeList from "@/components/AnimeList";
+import Simple from "@/components/AnimeList/Simple"
 import RecomendAnime from "@/components/RecomendedAnime";
 import Header from "@/components/AnimeList/Header"
 import { getAnimeResponse, getRecommendedAnimeResponse, randomAnime } from "@/libs/api-libs"
@@ -25,12 +26,12 @@ const Page = async () => {
 
       <section className="mt-4 ">
         <Header title="Anime Season Now" linkTitle="See More" linkHref="/season_now"/>
-        <AnimeList api = {SeasonNow}/>
+        <Simple api = {SeasonNow}/>
       </section>
 
       <section className="mt-4">
         <Header title="Anime Next Season" linkTitle="See More" linkHref="/season_upcoming"/>
-        <AnimeList api = {SeasonUpcoming}/>
+        <Simple api = {SeasonUpcoming}/>
       </section>
     </>
   );

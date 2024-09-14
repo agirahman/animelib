@@ -18,13 +18,13 @@ const Page = async () => {
 
       <div className="gap-4 flex-wrap flex items-center justify-center mt-10">
         <Link
-          href="/users"
+          href="/users/dashboard/collection"
           className="md:text-lg text-sm text-accent2 p-2 rounded-lg border border-accent2 hover:bg-accent2 hover:text-primary transition-all"
         >
           My Collection
         </Link>
         <Link
-          href=""
+          href="/users/dashboard/comment"
           className="md:text-lg text-sm text-accent2 p-2 rounded-lg border border-accent2 hover:bg-accent2 hover:text-primary transition-all"
         >
           My Comment

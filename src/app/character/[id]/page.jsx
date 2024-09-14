@@ -15,7 +15,7 @@ const Page = async ({params: { id }}) => {
         </h3>
       </div>
 
-      <div className="py-4 px-4 flex justify-center items-center flex-col gap-4 text-primary">
+      <div className="py-4 px-2 flex justify-center items-center flex-col gap-4 text-primary">
         <div className="relative rounded-md overflow-hidden shadow-custom-crisp">
           <Image
             src={char.data.images.webp.image_url}
@@ -31,7 +31,7 @@ const Page = async ({params: { id }}) => {
 
         
 
-        <div className="grid  gap-2 py-4 px-4 text-sm text-dark text-center justify-center overflow-x-auto">
+        <div className="grid w-full  gap-2 py-4 text-sm text-dark text-center justify-center overflow-x-auto">
           <div className="w-auto p-4 flex flex-row justify-center items-center rounded-md border border-accent2 bg-accent1 p-1">
             <p>Favorites - {char.data.favorites}</p>
           </div>
